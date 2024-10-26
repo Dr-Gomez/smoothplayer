@@ -6,8 +6,6 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"os/exec"
-	"runtime"
 	"strings"
 	"time"
 
@@ -56,16 +54,7 @@ func (rc *RadioCollection) DisplayRadios() {
 }
 
 func clearTerminal() {
-	var cmd *exec.Cmd
-
-	if runtime.GOOS == "windows" {
-		cmd = exec.Command("cmd", "/c", "cls")
-	} else {
-		cmd = exec.Command("clear")
-	}
-
-	cmd.Stdout = os.Stdout
-	cmd.Run()
+	fmt.Print("\033[2J")
 }
 
 func showHelp() {
@@ -174,7 +163,7 @@ func streamMP3(audioStreamURL string, radioCollection RadioCollection) {
 
 func main() {
 	baseSiteURL := "https://ice-sov.musicradio.com"
-	audioStreamURL := "https://ice-sov.musicradio.com/ClassicFMMP3"
+	audioStreamURL := "https://ice-sov.musicradio.com/ClassicFMCalmMP3"
 
 	// Base Website
 
