@@ -163,7 +163,7 @@ func streamMP3(audioStreamURL string, radioCollection RadioCollection) {
 
 func main() {
 	baseSiteURL := "https://ice-sov.musicradio.com"
-	audioStreamURL := "https://ice-sov.musicradio.com/ClassicFMCalmMP3"
+	audioStreamURL := "https://ice-sov.musicradio.com/SmoothRelaxMP3"
 
 	// Base Website
 
